@@ -24,7 +24,7 @@
 - https://wiki.archlinux.org/index.php/I3
 - http://www.uzbl.org/wiki/ytvp
 - https://wiki.archlinux.org/index.php/Browser_plugins
-
+- redimensionar mac partition: http://www.macworld.com/article/1055274/marchgeekfactor.html
 
 ## Instalar lubuntu
 
