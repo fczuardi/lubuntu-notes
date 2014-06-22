@@ -16,6 +16,78 @@ sudo apt-get update
 sudo apt-get install darktable
 ```
 
+#### Darktable from git
+
+- meu
+```
+git clone git://github.com/darktable-org/darktable.git
+sudo apt-get install cmake
+sudo apt-get install intltool
+sudo apt-get install xsltproc
+sudo apt-get install libxml2 libxml2-dev libxml2-utils  
+sudo apt-get install webp
+? sudo apt-get install libwebp-dev  
+sudo apt-get install libgphoto2-dev
+sudo apt-get install liblensfun-dev
+sudo apt-get install librsvg2-dev
+sudo apt-get install libsqlite3-dev
+sudo apt-get install libexiv2-dev  
+sudo apt-get install libcurl4-openssl-dev
+sudo apt-get install liblcms2-dev
+```
+
+- do site
+  - http://www.darktable.org/install/#source
+```
+sudo apt-get install intltool libatk1.0-dev libcairo2-dev libsoup2.4-dev libexiv2-dev libfontconfig1-dev libfreetype6-dev libgomp1 libgtk2.0-dev libjpeg-dev libtiff4-dev liblcms2-dev liblensfun-dev libpng12-dev libsqlite3-dev libstdc++6-4.4-dev libxml2-dev libopenexr-dev libcurl4-gnutls-dev libgphoto2-2-dev libdbus-glib-1-dev libgnome-keyring-dev fop librsvg2-dev libflickcurl-dev cmake liblua5.2-dev libcolord-dev
+```
+
+e
+```
+ sudo apt-get install openjdk-7-jdk
+```
+
+### VP8
+- http://wiki.webmproject.org/howtos/convert-png-frames-to-webm-video
+```
+sudo apt-get install vpx-tools
+```
+### Daala
+
+- https://wiki.xiph.org/Daala_Quickstart
+
+```
+git clone https://git.xiph.org/daala.git
+cd daala
+./autogen.sh
+./configure --disable-unit-tests
+make
+...
+
+checking for SDL... no
+configure: error: Package requirements (sdl) were not met:
+
+No package 'sdl' found
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables SDL_CFLAGS
+and SDL_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+```
+
+```
+sudo apt-get install libsdl1.2-dev
+sudo apt-get install libogg-dev
+make
+```
+
+related bookmarks
+- http://maikmerten.livejournal.com/4487.html
+- https://media.xiph.org/video/derf/
+- http://lists.xiph.org/pipermail/daala/2014-May/000030.html
+
 ### FFMPEG
 
 ```
