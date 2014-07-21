@@ -47,11 +47,64 @@ e
  sudo apt-get install openjdk-7-jdk
 ```
 
+### Youtube
+- https://support.google.com/youtube/answer/1722171
+
 ### VP8
 - http://wiki.webmproject.org/howtos/convert-png-frames-to-webm-video
 ```
 sudo apt-get install vpx-tools
 ```
+
+#### YUV
+- http://wiki.webmproject.org/howtos/convert-png-frames-to-webm-video
+
+```
+png2yuv -I p -f 24 -b 1 -n 1440 -j %04d.png > input_3840x2160_24fps.yuv
+```
+
+#### VP8
+
+- http://www.webmproject.org/tools/encoder-parameters/#10-sample-command-lines
+- https://support.google.com/youtube/answer/1722171?hl=en
+
+1920_1080
+
+png2yuv -I p -f 24 -b 1 -n 781 -j preview%04d.png > input_1920_1080_24fps.yuv
+(781 eh o numero de frames)
+
+vpxenc  input_1920_1080_24fps.yuv -o output_vp8_1920x1080_24fps.webm \
+  --codec=vp8 --i420 -w 1920 -h 1080 -p 2 -t 4 \
+  --good --cpu-used=0 --target-bitrate=8000 --end-usage=vbr \
+  --auto-alt-ref=1 --fps=24000/1001 -v \
+  --minsection-pct=5 --maxsection-pct=800 \
+  --lag-in-frames=16 --kf-min-dist=0 --kf-max-dist=360 \
+  --token-parts=2 --static-thresh=0 --drop-frame=0 \
+  --min-q=0 --max-q=60
+
+2-Pass Faster VBR Encoding
+
+3840x2160
+
+vpxenc  input_3840x2160_24fps.yuv -o output_vp8_3840x2160_24fps.webm \
+  --codec=vp8 --i420 -w 3840 -h 2160 -p 2 -t 4 \
+  --good --cpu-used=0 --target-bitrate=45000 --end-usage=vbr \
+  --auto-alt-ref=1 --fps=24000/1001 -v \
+  --minsection-pct=5 --maxsection-pct=800 \
+  --lag-in-frames=16 --kf-min-dist=0 --kf-max-dist=360 \
+  --token-parts=2 --static-thresh=0 --drop-frame=0 \
+  --min-q=0 --max-q=60
+
+
+##### add Audio
+
+```
+(exportar do blender p/ flac)
+ffmpeg -i ../preview2.flac -acodec libvorbis -ab 384k ../preview2.ogg
+sudo apt-get install mkvtoolnix 
+mkvmerge --webm -o combined.webm video.webm audio.ogg
+```
+
 ### Daala
 
 - https://wiki.xiph.org/Daala_Quickstart
@@ -83,7 +136,12 @@ sudo apt-get install libogg-dev
 make
 ```
 
-related bookmarks
+#### PNG > YUV
+```
+./tools/png2y4m video%05d.png -o video.y4m
+```
+
+#### related bookmarks
 - http://maikmerten.livejournal.com/4487.html
 - https://media.xiph.org/video/derf/
 - http://lists.xiph.org/pipermail/daala/2014-May/000030.html
@@ -107,6 +165,8 @@ sudo apt-get install ffmpeg
 - Webm
   - http://wiki.webmproject.org/howtos/convert-png-frames-to-webm-video
 
+- 2 transform p/ scale + pan
+  - http://blender.stackexchange.com/questions/6712/how-to-shrink-an-image-with-the-video-sequence-editor
 
 #### Melt
 -
@@ -133,6 +193,12 @@ sudo apt-get install systemsettings
 ### Shotcut
 - http://www.shotcut.org/bin/view/Shotcut/Download
 
+```
+sudo apt-get install libqt5webkit5-dev
+sudo apt-get install libqt5x11extras5-dev
+sudo apt-get install libmlt-dev
+?sudo apt-get install libqt5widgets5
+```
 
 
 
