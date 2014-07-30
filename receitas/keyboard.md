@@ -21,3 +21,11 @@ http://linux.m2osw.com/compose-key-under-linux
 Chrome: https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1309781
 
 (mandinga: quit ibus e abre ibus-setup)
+
+
+### Firefox
+https://wiki.kubuntu.org/ComposeKey#Configuration_for_Gtk_Applications_.28Gnome.2C_FireFox.2C_etc..29
+
+```
+GTK_IM_MODULE=xim firefox
+```

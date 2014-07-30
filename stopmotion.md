@@ -73,7 +73,7 @@ png2yuv -I p -f 24 -b 1 -n 1440 -j %04d.png > input_3840x2160_24fps.yuv
 png2yuv -I p -f 24 -b 1 -n 781 -j preview%04d.png > input_1920_1080_24fps.yuv
 (781 eh o numero de frames)
 
-vpxenc  input_1920_1080_24fps.yuv -o output_vp8_1920x1080_24fps.webm \
+vpxenc  input_1920_1080_24fps.yuv -o outputb_vp8_1920x1080_24fps.webm \
   --codec=vp8 --i420 -w 1920 -h 1080 -p 2 -t 4 \
   --good --cpu-used=0 --target-bitrate=8000 --end-usage=vbr \
   --auto-alt-ref=1 --fps=24000/1001 -v \
@@ -101,7 +101,7 @@ vpxenc  input_3840x2160_24fps.yuv -o output_vp8_3840x2160_24fps.webm \
 ```
 (exportar do blender p/ flac)
 ffmpeg -i ../preview2.flac -acodec libvorbis -ab 384k ../preview2.ogg
-sudo apt-get install mkvtoolnix 
+sudo apt-get install mkvtoolnix
 mkvmerge --webm -o combined.webm video.webm audio.ogg
 ```
 

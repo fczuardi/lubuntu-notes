@@ -48,9 +48,13 @@ sudo ln -s /home/fabricio/Applications/icecat-24.0/icecat /usr/bin/browser
 ```chromium-browser --app=http://blog.fabricio.org```
 
 ### Extensions?
-- https://chrome.google.com/webstore/detail/minimal-new-tab-clock/impmanfocmgfodfbnhbmkkonnpcogfak?hl=en
+- Clock:  https://chrome.google.com/webstore/detail/minimal-new-tab-clock/impmanfocmgfodfbnhbmkkonnpcogfak?hl=en
+
+- theme:  https://chrome.google.com/webstore/detail/minimal/hnfhcmjkebafbfikmbkhdpbmfpfjgiog?hl=en
+
 - https://chrome.google.com/webstore/detail/lubuntu-scrollbars/hemkkjpjknkkndhconammdhlhdkjclim/related?hl=en
 - https://chrome.google.com/webstore/detail/penguinium/pkldogepcgpgphmkhenghhinknmopahp?hl=en
+
 
 ### Youtube?
 
