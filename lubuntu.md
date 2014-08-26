@@ -16,6 +16,15 @@
 - [ ] power notification
   - - ?? http://askubuntu.com/questions/218773/no-power-notifications-with-i3wm
 
+## Apps
+- https://wiki.archlinux.org/index.php/List_of_applications
+
+- galculator
+- atom
+- ncdu
+
+
+
 ## Bookmarks
 - http://peter.sh/experiments/chromium-command-line-switches/
 - 60fps http://paulbakaus.com/tutorials/performance/the-illusion-of-motion/

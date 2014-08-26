@@ -70,8 +70,13 @@ png2yuv -I p -f 24 -b 1 -n 1440 -j %04d.png > input_3840x2160_24fps.yuv
 
 1920_1080
 
+- no blender se precisar de mais que 9999 frames use o character # para botar padding de zero maiores: http://wiki.blender.org/index.php/Doc:2.6/Manual/Render/Command_Line#Render_Options
+
 png2yuv -I p -f 24 -b 1 -n 781 -j preview%04d.png > input_1920_1080_24fps.yuv
+
+png2yuv -I p -f 24 -b 305 -n 11303 -j resumo%05d.png > input_1920_1080_24fps.yuv
 (781 eh o numero de frames)
+(b é o frame inicial)
 
 vpxenc  input_1920_1080_24fps.yuv -o outputb_vp8_1920x1080_24fps.webm \
   --codec=vp8 --i420 -w 1920 -h 1080 -p 2 -t 4 \
@@ -81,6 +86,20 @@ vpxenc  input_1920_1080_24fps.yuv -o outputb_vp8_1920x1080_24fps.webm \
   --lag-in-frames=16 --kf-min-dist=0 --kf-max-dist=360 \
   --token-parts=2 --static-thresh=0 --drop-frame=0 \
   --min-q=0 --max-q=60
+
+
+ou 30 fps
+
+vpxenc  input_1920_1080_30fps.yuv -o outputb_vp8_1920x1080_30fps.webm \
+  --codec=vp8 --i420 -w 1920 -h 1080 -p 2 -t 4 \
+  --good --cpu-used=0 --target-bitrate=8000 --end-usage=vbr \
+  --auto-alt-ref=1 --fps=30000/1001 -v \
+  --minsection-pct=5 --maxsection-pct=800 \
+  --lag-in-frames=16 --kf-min-dist=0 --kf-max-dist=360 \
+  --token-parts=2 --static-thresh=0 --drop-frame=0 \
+  --min-q=0 --max-q=60
+
+
 
 2-Pass Faster VBR Encoding
 
@@ -137,6 +156,10 @@ make
 ```
 
 #### PNG > YUV
+
+YUV files are HUGE, make sure you have lots of free space
+
+
 ```
 ./tools/png2y4m video%05d.png -o video.y4m
 ```
@@ -167,6 +190,12 @@ sudo apt-get install ffmpeg
 
 - 2 transform p/ scale + pan
   - http://blender.stackexchange.com/questions/6712/how-to-shrink-an-image-with-the-video-sequence-editor
+
+
+
+Editing with blender: (CC licensed tutorial):
+- https://www.youtube.com/watch?v=zYVZ6rtayaA&noredirect=1
+
 
 #### Melt
 -
